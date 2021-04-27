@@ -1,5 +1,5 @@
 const DishComments = (props) => (
-    <h1>I'M THE COMMENTS COMPONENT</h1>
+    <h3>I'M THE COMMENTS COMPONENT, THE SELECTED DISH IS {props.dish.name}</h3>
 )
 
 export default DishComments

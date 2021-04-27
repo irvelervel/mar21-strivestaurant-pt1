@@ -13,6 +13,8 @@ import DishComments from './DishComments'
 class Home extends React.Component {
 
     // let's declare the INITIAL state for my component
+    // the state is an object for keeping track of things during
+    // the lifespan of our page/component
     state = {
         selectedDish: items[0]
     }
@@ -33,10 +35,13 @@ class Home extends React.Component {
                         <p>The best pasta dishes you can find on the web!</p>
                         <Carousel>
                             {
+                                // every time you do a .map in react you'll need to
+                                // differentiate each one of the JSX elements you're generating
                                 items.map((item, index) => (
                                     // we need to let React know that all these carousel slides are different
                                     <Carousel.Item
-                                        key={"pastadish-" + index}
+                                        key={"pastanumber" + index}
+                                        // the key prop must be unique for every slide
                                         onClick={() => this.setState({ selectedDish: item })}
                                     >
                                         {/* the key is necessary for React's VIRTUAL DOM */}
